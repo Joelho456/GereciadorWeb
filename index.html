@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alterar Link</title>
+    <link rel="stylesheet" href="stylesalter.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const listItems = document.querySelectorAll('.list-container li');
+
+            listItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    listItems.forEach(i => i.classList.remove('selected'));
+                    item.classList.add('selected');
+                });
+            });
+
+            const selectButton = document.querySelector('.select');
+            selectButton.addEventListener('click', () => {
+                const selectedItem = document.querySelector('.list-container li.selected');
+                if (selectedItem) {
+                    alert(`Você selecionou o link: ${selectedItem.textContent}`);
+                } else {
+                    alert('Por favor, selecione algum link.');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="search-bar-container">
+            <input type="text" placeholder="Pesquisar..." class="search-bar">
+            <button class="search-button">🔍</button>
+        </div>
+
+    </div>
+
+    <div class="main">
+        <h1>Alterar Link</h1>
+        <form class="form">
+            <label for="link">Selecione o Link que deseja alterar</label>
+            <div class="list-container">
+                <ul>
+                    <li>▼ Escola</li>
+                    <li>▲ Trabalho</li>
+                    <li>▲ Cozinha</li>
+                </ul>
+            </div>
+
+            <div class="actions">
+                <button type="button" class="select">Selecionar</button>
+                <button type="reset" class="cancel">Cancelar</button>
+            </div>
+        </form>
+
+        <ur>
+            <a href="index.html">Voltar</a>
+        </ur>
+    </div>
+
+    <footer class="footer">
+        © 2025 <span>Carlos Renan Silveira de Souza</span>. Todos os direitos reservados.
+    </footer>
+</body>
+</html>
