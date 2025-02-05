@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Link</title>
+    <link rel="stylesheet" href="stylescasdras.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="search-bar-container">
+            <input type="text" placeholder="Pesquisar..." class="search-bar" id="searchBar">
+            <button class="search-button" onclick="searchItems()">🔍</button>
+        </div>
+        <ul id="sidebarList"></ul>
+    </div>
+
+    <div class="main">
+        <h1>Cadastrar Link</h1>
+        <form class="form">
+            <label for="link">Digite ou cole o Link que será cadastrado (Obrigatório https:// ou http://)</label>
+            <input type="text" id="link" placeholder="https://exemplo.com">
+
+            <label for="description">Digite ou cole aqui uma descrição para o Link</label>
+            <input type="text" id="description" placeholder="Descrição do link">
+
+            <label for="folder">Pasta</label>
+            <select id="folder">
+                <option value="">Selecione uma pasta</option>
+                <option>Trabalho</option>
+                <option>Escola</option>
+                <option>Pessoal</option>
+            </select>
+
+            <div class="actions">
+                <button type="reset" class="cancel">Cancelar</button>
+                <button type="button" class="save" onclick="saveItem()">Salvar</button>
+            </div>
+        </form>
+        <ur>
+            <a href="index.html">Voltar</a>
+        </ur>
+    </div>
+
+    <div class="floating-window" id="floatingWindow">
+        <p id="floatingContent"></p>
+        <button class="copy" onclick="copyLink()">Copiar Link</button>
+        <button class="close" onclick="closeWindow()">Fechar</button>
+    </div>
+    <div class="overlay" id="overlay" onclick="closeWindow()"></div>
+
+    <script>
+        const sidebarList = document.getElementById('sidebarList');
+        const floatingWindow = document.getElementById('floatingWindow');
+        const floatingContent = document.getElementById('floatingContent');
+        const overlay = document.getElementById('overlay');
+        let currentLink = '';
+
+        function saveItem() {
+            const link = document.getElementById('link').value.trim();
+            const description = document.getElementById('description').value.trim();
+            const folder = document.getElementById('folder').value;
+
+            if (!link || !description || !folder) {
+                alert('Preencha todos os campos.');
+                return;
+            }
+
+            const listItem = document.createElement('li');
+            listItem.textContent = `${folder} - ${description}`;
+            listItem.dataset.link = link;
+            listItem.onclick = () => openWindow(link);
+            sidebarList.appendChild(listItem);
+
+            document.getElementById('link').value = '';
+            document.getElementById('description').value = '';
+            document.getElementById('folder').value = '';
+        }
+
+        function openWindow(link) {
+            currentLink = link;
+            floatingContent.textContent = `Link: ${link}`;
+            floatingWindow.style.display = 'block';
+            overlay.style.display = 'block';
+        }
+
+        function closeWindow() {
+            floatingWindow.style.display = 'none';
+            overlay.style.display = 'none';
+        }
+
+        function copyLink() {
+            navigator.clipboard.writeText(currentLink);
+            alert('Link copiado!');
+        }
+
+        function searchItems() {
+            const query = document.getElementById('searchBar').value.toLowerCase();
+            const items = sidebarList.getElementsByTagName('li');
+
+            for (let item of items) {
+                if (item.textContent.toLowerCase().includes(query)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            }
+        }
+
+    </script>
+    <footer class="footer">
+        © 2025 <span>Carlos Renan Silveira de Souza</span>. Todos os direitos reservados.
+    </footer>
+</body>
+</html>
+
