@@ -1,0 +1,136 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: #e4d6d0;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 290px;
+    height: 100vh;
+    background-color: #726b6a;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.sidebar .search-bar-container {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.sidebar .search-bar {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FF8A75;
+    color: white;
+}
+
+.sidebar .search-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FFEDE6;
+    color: #FF6F61;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar .search-button:hover {
+    background-color: #FFB39E;
+}
+
+.sidebar .buttons-container {
+    margin-top: auto;
+    margin-bottom: 50px; /* Subir botões */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 80%;
+}
+
+.sidebar a {
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    padding: 10px 0;
+    background-color: #FF8A75;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar a:hover {
+    background-color: #FFB39E;
+}
+
+/* Main Content */
+.main {
+    margin-left: 290px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.main h1 {
+    font-size: 2.5em;
+    color: #FF6F61;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+}
+
+.logo {
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.main p {
+    font-size: 1.3em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Footer */
+.footer {
+    background-color: #FF6F61;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9em;
+    margin-top: auto;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer span {
+    color: #FFEDE6;
+    font-weight: bold;
+}

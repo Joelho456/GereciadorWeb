@@ -1,0 +1,257 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: #e4d6d0;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 290px;
+    height: 100vh;
+    background-color: #726b6a;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+}
+
+.sidebar .search-bar-container {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.sidebar .search-bar {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FF8A75;
+    color: white;
+}
+
+.sidebar .search-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FFEDE6;
+    color: #FF6F61;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar .search-button:hover {
+    background-color: #FFB39E;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    width: 80%;
+}
+
+.sidebar ul li {
+    margin: 5px 0;
+    padding: 10px;
+    background-color: #e9735e;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.sidebar ul li:hover {
+    background-color: #FFB39E;
+}
+
+/* Main Content */
+.main {
+    margin-left: 290px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+h1 {
+    font-size: 2em;
+    color: #FF6F61;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form {
+    width: 80%;
+    max-width: 600px;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #FFB39E;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #FF6F61;
+}
+
+.form input[type="text"],
+.form select {
+    width: 99%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #FFB39E;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.form input[type="text"]:focus,
+.form select:focus {
+    border-color: #FF6F61;
+    outline: none;
+    box-shadow: 0 0 5px #FF6F61;
+}
+
+.form .actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form button.save {
+    background-color: #FF6F61;
+    color: white;
+}
+
+.form button.cancel {
+    background-color: #FFB39E;
+    color: black;
+}
+
+.message {
+    display: none;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+ur {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+    text-align: center;
+}
+
+ur a {
+    font-size: 1.2em;
+    color: #FF6F61;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+ur a:hover {
+    color: #FF8A75;
+}
+
+/* Footer */
+.footer {
+    background-color: #FF6F61;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9em;
+    margin-top: auto;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer span {
+    color: #FFEDE6;
+    font-weight: bold;
+}
+
+.message {
+    display: none;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+.floating-window {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    background-color: white;
+    border: 1px solid #FFB39E;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    display: none;
+    z-index: 10;
+}
+
+.floating-window button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.floating-window .close {
+    background-color: #FFB39E;
+    color: black;
+}
+
+.floating-window .copy {
+    background-color: #FF6F61;
+    color: white;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 5;
+}
