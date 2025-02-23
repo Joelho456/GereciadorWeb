@@ -1,0 +1,11 @@
+{
+  "name": "GerenciadorWeb",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Joelho456/GereciadorWeb.git",
+  "author": "Joelho456 <babusama666@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
