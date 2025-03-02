@@ -1,28 +1,12 @@
 const express = require("express");
 const server = express();
 
-//Query params =?nome=Carlos&idade=22
+server.use(express.json());
 
-server.get("/hello", (req, res) => {
-    const {nome, idade} = req.query;
-
-    return res.json({
-        title: "Hello world",
-        message: `Ola ${nome} tudo certo com voceeeeeee?`,
-        idade: idade
-    });
-});
-
-
-//Route params = /hello/:nome
-
-server.get("/hello/:nome/:idade", (req, res) => {
-    const { nome } = req.params;
-
-    return res.json({
-        tittle: "Hello World",
-        message: `Ola ${nome} tudo certo?`
-    });
-});
+let customers = [
+    { id: 1, name: "Dev Samurai", site: "http://devsamurai.com.br" },
+    { id: 2, name: "Google", site: "http://google.com" },
+    { id: 3, name: "UOL", site: "http://uol.com.br" }
+];
 
 server.listen(3000);
